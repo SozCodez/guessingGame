@@ -29,25 +29,6 @@ guess1 = int(input(""))
 #loop keeps it open as program runs, basically
 #as long as there are more lines it can run, it will
 while start:
-     #if numTries > 0:
-     #    tryAvailable = True
-     #else:
-     #    tryAvailable = False
-
-     #while not tryAvailable:
-     #    print()
-     #    print("Out of tries :(")
-     #    start = False #to be able to exit main game loop
-     #   break
-     #if not start:
-     #   break 
-    """ 
-    when no more tries are avalable, we set start to false, but this doesnt
-    exit the main game loop meaning it will continue to run guess queries
-    to fix this we add a check early in the game loop that stops 
-    before any more queries are made
-    """
-    
     if guess1 != "":
         if 10 >= guess1 >= 1:
             if guess1 in prevGuesses:
@@ -59,7 +40,7 @@ while start:
                 guess1 = int(input(":"))
             else: #this is our code block for a valid input
                 numTries += -1
-                
+                                    #before any query program checks that user still has tries
                 if guess1 > randomNum1 and guess1 != randomNum1 and numTries != 0:
                     prevGuesses.append(guess1) 
                     print()
